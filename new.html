@@ -1,0 +1,597 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> Hello </title> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://apis.google.com/js/client:plusone.js" type="text/javascript"></script>
+<pre id="output"></pre>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+</head> 
+<!--/////////////////////////////////////////////////////////////////////DROP DOWN MENU///////////////////////////////////////////////////////////////////////////////////////////////////-->
+<body> 
+<div id="backgroundheader">
+	<!--<div class="nav"> -->
+	<ul id="inner">
+					<li><a href="googleapiclientside.html"><u>Add Homework</u></a></li> 
+					<li><a href="new.html"><u>Add Class</u></a></li>
+					<li id="other"><a href="timer.html"><u>Timer</u></a></li> 
+					<li id="other"><a href="account.html"><u>Account</u></a></li>
+	</ul>				
+				
+<img class="img-circle"src="logoimage.jpg"  href="welcomefinal.html" width="300px" height="200px"> 
+</div>
+
+<div> <h1> Add your class below </h1> </div> 
+<form>
+	Class: <input type="calEvent" name="calEvent" id="eventField">
+	<br/>
+</form>
+<dl class="dropdown"> 
+  
+    <dt>
+    <a href="#">
+      <span class="hida">Select</span>    
+      <p class="multiSel"></p>  
+    </a>
+    </dt>
+  
+    <dd>
+        <div class="multiSelect">
+            <ul>
+                <li>
+                    <input type="checkbox" value="Monday" id="1Monday"/>Monday</li>
+                <li>
+                    <input type="checkbox" value="Tuesday" id="2Tuesday"/>Tuesday</li>
+                <li>
+                    <input type="checkbox" value="Wednesday" id="3Wednesday" />Wednesday</li>
+                <li>
+                    <input type="checkbox" value="Thursday" id="4Thursday"/>Thursday</li>
+                <li>
+                    <input type="checkbox" value="Friday" id="5Friday" />Friday</li>
+                
+            </ul>
+        </div>
+    </dd>
+  
+</dl>
+<!--////////////////////////////////////////////////////////////////////// INPUT &SUBMIT BUTTON///////////////////////////////////////////////////////////////////-->
+<form>
+	
+	Start Time: <input type="time" name="time" id="startField">
+	<br/>
+	End Time: <input type="time" name="time" id="endField">
+	<div>
+	
+</form>
+<button type="button" id="submitlink">Click Me!</button> <!--when button is clicked everything should be saved-->
+
+
+<!--/////////////////////////////////////////////////////////////////////////DESIGN////////////////////////-->
+<style> 
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+h1{
+text-align: center; 
+}
+
+a {
+    color:#fff;
+}
+
+.dropdown{
+position: relative; 
+left: 530px; 
+}
+.dropdown dd, .dropdown dt {
+    margin:0px;
+    padding:0px;
+}
+.dropdown ul {
+    margin: -1px 0 0 0;
+}
+.dropdown dd {
+    position:relative;
+}
+.dropdown a, 
+.dropdown a:visited {
+    color:#fff;
+    text-decoration:none;
+    outline:none;
+    font-size: 12px;
+}
+.dropdown dt a {
+    background-color:#4F6877;
+    display:block;
+    padding: 8px 20px 5px 10px;
+    min-height: 25px;
+    line-height: 24px;
+    overflow: hidden;
+    border:0;
+    width:272px;
+}
+.dropdown dt a span, .multiSel span {
+    cursor:pointer;
+    display:inline-block;
+    padding: 0 3px 2px 0;
+}
+.dropdown dd ul {
+    background-color: #4F6877;
+    border:0;
+    color:#fff;
+    display:none;
+    left:0px;
+    padding: 2px 15px 2px 5px;
+    position:absolute;
+    top:2px;
+    width:280px;
+    list-style:none;
+    height: 100px;
+    overflow: auto;
+}
+.dropdown span.value {
+    display:none;
+}
+.dropdown dd ul li a {
+    padding:5px;
+    display:block;
+}
+.dropdown dd ul li a:hover {
+    background-color:#fff;
+}
+button {
+  background-color: #6BBE92;
+  width: 302px;
+  border: 0;
+  padding: 10px 0;
+  margin: 5px 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+#txt{
+	 border-radius: 20px;
+  border: 10px solid #BADA55;
+	background-color: red;
+	height: 100px;
+	width: 400px;
+	position: relative;
+	left: 35%;
+	top: 20%;
+	font-family: 'Lobster', cursive;
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+
+#backgroundheader{ 
+	background-color: #00CCCC; 
+	height: 200px;
+	margin-top: -18px;
+	margin-left: -8px;
+	margin-right: -16px;
+	margin-bottom: 20px;
+	}
+
+.img-circle {
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    right: 520px;
+   
+
+}
+
+
+#inner li {
+	 list-style: none;
+
+}
+#inner li a{
+
+   text-decoration: none;
+   font-family: 'Lobster', cursive;
+   font-size: 30px;
+   float: left;
+   margin-top: 80px;
+   display: block; 
+   padding: 10px 20px; 
+   color: black;
+   
+  width: 220px;
+
+}
+
+#other{
+	position: relative;
+	left: 350px;
+}
+
+#eventField{ 
+background-color: #00CCCC; 
+width: 300px; 
+height: 60px; 
+font-size:  20px;
+border-style: solid;
+ border-width: 5px;
+ border-radius: 25px;
+ border-color: white; 
+
+}
+
+#startField{
+background-color: #00CCCC; 
+width: 300px; 
+height: 60px; 
+font-size:  20px;
+border-style: solid;
+ border-width: 5px;
+ border-radius: 25px;
+ border-color: white; 
+} 
+
+#endField{
+background-color: #00CCCC; 
+width: 300px; 
+height: 60px; 
+font-size:  20px;
+border-style: solid;
+ border-width: 5px;
+ border-radius: 25px;
+ border-color: white; 
+}
+
+form{ 
+font-family: 'Lobster', cursive;
+font-size: 60px;
+position: relative; 
+left: 530px;
+}
+</style> 
+<!--- /////////////////////////////////////////////////////////////DROP DOWN JS ///////////////////////////////////////////////////////////////////////-->
+<script> 
+
+var weekDays=[];
+$(".dropdown dt a").on('click', function () {
+          $(".dropdown dd ul").slideToggle('fast');
+      });
+
+      $(".dropdown dd ul li a").on('click', function () {
+          $(".dropdown dd ul").hide();
+      });
+
+      function getSelectedValue(id) {
+	  console.log("jlkjkljlk");
+           return $("#" + id).find("dt a span.value").html();
+      }
+
+      $(document).bind('click', function(e) {
+	  e.preventDefault();
+          var $clicked = $(e.target);
+          if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
+      });
+<!-- /////////////////////////////////////////////////////////////allows the user to select mutliple things///////////////////////////////////////////////////////////////-->
+
+      $('.multiSelect input[type="checkbox"]').on('click', function () {
+        console.log("checkboxxxx");
+          var title = $(this).closest('.multiSelect').find('input[type="checkbox"]').val(),
+              title = $(this).val() + ",";
+        
+          if ($(this).is(':checked')) {
+				$(this).prop("checked", true);
+				console.log("this is ", this);
+				var html = '<span title="' + title + '">' + title + '</span>';
+				weekDays.push(title);
+				$('.multiSel').append(html);
+				$(".hida").hide();
+				var group = "input:checkbox[name='"+$(this).attr("name")+"']";
+				$(group).prop("checked", false);
+          } 
+          else {
+              $('span[title="' + title + '"]').remove();
+              var ret = $(".hida");
+              $('.dropdown dt a').append(ret);
+          }
+      });
+
+</script> 
+<!--//////////////////////////////////////////////////////////////////// GOOGLE API CLIENT INFO///////////////////////////////////////////////////////////////////////-->
+
+<script type="text/javascript">
+//1029612452987-529v6oknnu9tt66g153smpievjf9f220
+      var clientId = '1029612452987-jfdhbr1caa77a8op6i2i3q4v6nd5urf1.apps.googleusercontent.com';
+	  //1029612452987-jfdhbr1caa77a8op6i2i3q4v6nd5urf1.apps.googleusercontent.com
+	  
+	  
+      //var apiKey = 'AIzaSyDQE1zsLgQGrKGMhhrOqpIn_QLu1QaBXIA';
+	  var apiKey = 'AIzaSyClT7FGLJhnMBEIiZXTOTvr3AbjIwKzJhE';
+
+	var scopes = ['https://www.googleapis.com/auth/calendar'] ;
+ 
+      function handleClientLoad() {
+        // Step 2: Reference the API key
+        gapi.client.setApiKey(apiKey);
+        window.setTimeout(checkAuth,1);
+      }
+
+      function checkAuth() {
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+      }
+<!-- ////////////////////////////////////////////////////////////////////////////////// AUTHORIZE CLIENT INFO/////////////////////////////////////////////////////////////////////////////////////-->
+		
+	 function handleAuthResult(authResult) {
+       // var authorizeButton = document.getElementById('authorize-button');
+        if (authResult && !authResult.error) {
+          //authorizeButton.style.visibility = 'hidden';
+          makeApiCall();
+		  console.log("api!!!!!!!!");
+        } else {
+		console.log("not authorizeddd");
+          //authorizeButton.style.visibility = '';
+         // authorizeButton.onclick = handleAuthClick;
+        }
+      }
+
+      function handleAuthClick(event) {
+        // Step 3: get authorization to use private data
+        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+        return false;
+      }
+
+      // Load the API and make an API call.  Display the results on the screen.
+      function makeApiCall() {
+        // Step 4: Load the Google+ API
+        			loadCalendarApi();
+///////////////////////////////////////////////////////////////CALENDAR API ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      }
+	  function loadCalendarApi() {
+        gapi.client.load('calendar', 'v3', listUpcomingEvents);
+      }
+
+	  function listUpcomingEvents() {
+        var request = gapi.client.calendar.events.list({
+          'calendarId': 'primary',
+          'timeMin': (new Date()).toISOString(),
+          'showDeleted': false,
+          'singleEvents': true,
+          'maxResults': 10,
+          'orderBy': 'startTime'
+        });
+/////////////////////////////////////////////////////////////////////////////////ADDING EVENTS///////////////////////////////////////////////////////////////////////////////////////////////
+        request.execute(function(resp) {
+          var events = resp.items;
+          //appendPre('Upcoming events:');
+
+          if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+              var event = events[i];
+              var when = event.start.dateTime;
+              if (!when) {
+                when = event.start.date;
+              }
+              appendPre(event.summary + ' (' + when + ')')
+            }
+          } else {
+            appendPre('No upcoming events found.');
+          }
+
+        });
+		
+		//runRestOfCode();
+		
+      }
+	  
+	   function appendPre(message) {
+        var pre = document.getElementById('output');
+        var textContent = document.createTextNode(message + '\n');
+       // pre.appendChild(textContent);
+      }
+	  
+	  
+	  ///////////////////////////////////////////////////////////////
+	  // do your thing heree.....
+	  
+
+	  
+	 // where it used to be 
+
+
+function runRestOfCode() {
+console.log("event is", evvent);
+
+}
+	  
+////////////////////////////////ALLOWS BUTTONS AND THE INPUT DATA TO BE SAVED//////////////////////////////////.//////////////////////////////////////
+function buildData() {
+	var txtData = "Event"+$("#eventField").val() +"\r\nTime"+$("#timeField").val();
+	//+"\r\nDate"+
+	//$("dateField").val()+"\r\nNote"+$("noteField").val();
+	console.log("build data is:", txtData);
+	return txtData;
+}
+// this will be executed when the document is ready 
+// this will act when submit is link is clicked
+$("#submitlink").click(function(event){
+event.preventDefault();
+console.log("pressed submit link!!")
+
+var today = new Date();
+for(var i =0; i< 1; i++){
+
+//getNearestDayOfWeek = function(dayOfWeekId, todayDayOfMonth){
+var dd = getNearestDayOfWeek("1", today.getDay());//today.getDay();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+console.log("jjkljlj", yyyy);
+if(dd<10) {
+    dd='0'+dd
+} 
+if(mm<10) {
+    mm='0'+mm
+} 
+
+eventDate=yyyy+"-"+ mm+'-'+dd;
+
+var eventClass =$("#eventField").val();
+
+var eventTimeStart = $("#startField").val();
+var eventTimeEnd = $("#endField").val();
+console.log("lolllllll",eventTimeStart, eventTimeEnd);
+var dateTimeStart = getDateInFormat(eventDate, eventTimeStart);
+var dateTimeEnd = getDateInFormat(eventDate,eventTimeEnd);
+var recurString = 'RRULE:FREQ=DAILY;COUNT=2';
+//"RRULE:FREQ=WEEKLY;UNTIL=20160708T170000Z";
+
+
+sendRequest(eventClass,"",dateTimeStart,dateTimeEnd, recurString); 
+}
+});
+
+	
+//////////////////////////////////////////////////////////////////////allows time to be converted to military time///////////////////////////////////////////////////////////////////////////////
+function getDateInFormat(date, time){
+console.log("tiem is,", time);
+var hourInt = parseInt(time.substring(0,2));
+var newHourInt = (hourInt - 8)% 24;
+if (newHourInt < 0) {
+newHourInt = 24 + newHourInt;
+}
+if(newHourInt < 10) {
+hourString = "0"+ newHourInt.toString() ; 
+}else {
+hourString = newHourInt.toString();
+}
+console.log("original:", hourInt) ;
+console.log("new:", newHourInt);
+	return date.substring(0,4) + "-" + date.substring(5,7) + "-" + date.substring(8, 10) + "T" + hourString + ":" + time.substring(3, 5) + ":" + "00";
+	}
+//////////////////////////Shows what the data is....finally info /////////////////////////////////////////////////////////////////////////////////////////
+	var sendRequest = function(eventName, eventNote, eventDateTimeStart, eventDateTimeEnd, recurString){
+	console.log("in request:", eventName, "note: ", eventNote,"||", eventDateTimeStart, eventDateTimeEnd, recurString);
+
+	//console.log("start", eventDateTimeStart, "end", eventDateTimeEnd);
+						var eventJSON =  {
+				  'summary': eventName,
+				  'description': "Enter your homework for this class.",
+				  'start': {
+					'dateTime':  eventDateTimeStart,////
+					'timeZone': "GMT"
+				  },
+				  'end': {
+					'dateTime': eventDateTimeEnd,////////
+					'timeZone': "GMT"
+				  },
+				  'attendees': [ ],
+				  'reminders': {
+					'useDefault': 'false',
+					'overrides': [
+					 // {'method': 'email', 'minutes': 24 * 60},
+					 // {'method': 'popup', 'minutes': 10}
+					]
+				  },
+				  'attachments': [{'fileUrl': ""}],
+				  'recurrance': [recurString]
+				};
+				
+				console.log("sending: ", eventJSON);
+				var request = gapi.client.calendar.events.insert({
+				  'calendarId': 'primary',
+				  'resource': eventJSON,
+				  'recurrence': [recurString]
+				});
+
+				request.execute(function(evvent) {
+				console.log(evvent);
+				  appendPre('Event created: ' + evvent.htmlLink);
+				}); 
+				}
+	
+	
+	//handleClientLoad();
+</script>
+<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+<script> 
+
+////////////////////////////////////////////////////////////////////////////ADDS RECURING EVENTS//////////////////////////////////////////////////////////////////////////////
+
+var getNearestDayOfWeek = function(dayOfWeekId, todayDayOfMonth){
+var x = dayOfWeekId.substring(0,1);
+		var eventDayOfWeek = parseInt(x);
+		var d = new Date();
+		var todayDayOfWeek = d.getDay();
+		// d.getDay() is day of the week
+		// need to figure out which other day you need.
+		var weekday = new Array(7);
+		weekday[0]=  "Sunday";
+		weekday[1] = "Monday";
+		weekday[2] = "Tuesday";
+		weekday[3] = "Wednesday";
+		weekday[4] = "Thursday";
+		weekday[5] = "Friday";
+		weekday[6] = "Saturday";
+		if(todayDayOfMonth <= 5){
+				if (eventDayOfWeek > todayDayOfWeek){
+			toReturn = todayDayOfMonth +(eventDayOfWeek - todayDayOfWeek); 
+		} else {
+			toReturn = todayDayOfMonth+ (7 - (eventDayOfWeek - todayDayOfWeek)) ;
+		}
+		} else {
+			if (eventDayOfWeek > todayDayOfWeek){
+			toReturn = todayDayOfMonth - (7-(eventDayOfWeek - todayDayOfWeek)); 
+		} else {
+			toReturn = todayDayOfMonth - (eventDayOfWeek - todayDayOfWeek) ;
+		}
+		
+		}
+	return toReturn;
+}
+
+
+
+
+//$("#Monday").onclick = function(){ 
+
+//event.setSummary("Appointment");
+//event.setLocation("Somewhere");
+//DateTime start = DateTime.parseRfc3339("2015-08-24T10:00:00.000-07:00")
+//DateTime end = DateTime.parseRfc3339("2015-08-24T10:25:00.000-07:00");
+//var today = new Date();
+//var dd = d.getDay();
+//var mm = today.getMonth()+1; //January is 0!
+//var yyyy = today.getFullYear();
+//if(dd<10) {
+//    dd='0'+dd
+//} 
+//if(mm<10) {
+////    mm='0'+mm
+//} 
+
+///eventDate= mm+'/'+dd+'/'+yyyy;
+
+//var eventClass =$("#classField").val();
+
+//var eventTimeStart = $("#startField").val();
+//var eventTimeEnd = $("#endField").val();
+//console.log("lolllllll",eventTimeStart, eventTimeEnd);
+//var dateTimeStart = getDateInFormat(eventDate, eventTimeStart);
+////var dateTimeEnd = getDateInFormat(eventDate,eventTimeEnd);
+
+//event.setStart(new EventDateTime().setDateTime(start).setTimeZone("UTC"));
+//event.setEnd(new EventDateTime().setDateTime(end).setTimeZone("UTC"));
+//event.setRecurrence(Arrays.asList(
+//var recurString = "RRULE:FREQ=WEEKLY;UNTIL=20160708T170000Z";
+//sendRequest(eventClass,eventTimeStart,eventTimeEnd, recurString); 
+
+//recurringEvent = service.events().insert("primary", event).execute();
+
+//console.log(recurringEvent.getId());
+
+ //};
+
+</script> 
+
+</body> 
+</html> 

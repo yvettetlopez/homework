@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> Timer </title> 
+
+<style> 
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+#title{
+	
+	font-size: 40px; 
+	font-family: 'Lobster', cursive;
+	text-align: center; 
+
+}
+
+#info{ 
+	background-color: white; 
+	font-size: 20px; 
+	text-align: center;
+	margin-bottom: 200px;
+
+}
+
+
+
+#txt{
+	 border-radius: 20px;
+  border: 10px solid #BADA55;
+	background-color: red;
+	height: 100px;
+	width: 400px;
+	position: relative;
+	left: 35%;
+	top: 20%;
+	font-family: 'Lobster', cursive;
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+
+#backgroundheader{ 
+	background-color: #00CCCC; 
+	height: 200px;
+	margin-top: -18px;
+	margin-left: -8px;
+	margin-right: -16px;
+	margin-bottom: 20px;
+	}
+
+.img-circle {
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    right: 520px;
+   
+
+}
+
+
+#inner li {
+	 list-style: none;
+
+}
+#inner li a{
+
+   text-decoration: none;
+   font-family: 'Lobster', cursive;
+   font-size: 30px;
+   float: left;
+   margin-top: 80px;
+   display: block; 
+   padding: 10px 20px; 
+   color: black;
+   
+  width: 220px;
+
+}
+
+#other{
+	position: relative;
+	left: 350px;
+}
+</style>
+</head> 
+
+
+<body onload="startTime()"> 
+ 
+<div id="backgroundheader">
+	<!--<div class="nav"> -->
+	<ul id="inner">
+					<li><a href="googleapiclientside.html"><u>Add Homework</u></a></li> 
+					<li><a href="new.html"><u>Add Class</u></a></li>
+					<li id="other"><a href="timer.html"><u>Timer</u></a></li> 
+					<li id="other"><a href="account.html"><u>Account</u></a></li>
+	</ul>				
+				
+<img class="img-circle"src="logoimage.jpg"  href="welcomefinal.html" width="300px" height="200px"> 
+</div>
+
+
+<div id="title"> Homework Timer </div> 
+<div id="info"> 
+
+<p> With this timer, you will be able to keep on track with your homework. </p> 
+<p> Every 30 minutes we will recommend a break, to make sure during those next 30 minutes you are staying focused.</p> 
+
+
+</div>
+
+<div id="txt"></div>
+
+<button onclick="clearInterval(myVar)">Stop time</button>
+
+
+<script>
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  //add a zero in front of numbers<10
+   m = checkTime(m);
+   s = checkTime(s);
+   document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+    var t = setTimeout(function(){ startTime() }, 500);
+}
+
+function checkTime(i) {
+   if (i < 10) {
+    i = "0" + i;
+  }
+   return i;
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body> 
+
+
+
+
+
+
+
+
+
+</html> 
